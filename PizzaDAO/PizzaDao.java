@@ -105,59 +105,6 @@ public class PizzaDao implements DaoW<Pizza>, DaoR<Pizza> {
     }
 
 
-//     public ResultSet get(Pizza pizza) {
-//         ResultSet result=null;
-//         Pizza pizzaRes = null;
-//         try (Connection connect = DriverManager.getConnection(DB_URL+"DAOPizzaShop", USER, PASS);
-//         Statement stmn = connect.createStatement();){
-//             PreparedStatement stPizza = connect.prepareStatement(getOnePizza);
-
-//             stPizza.setString(1, pizza.getId().toString());
-
-//             result=stPizza.executeQuery();
-            
-// //            UUID uuid = pizza.getId();
-
-//             while (result.next()) {
-//             System.out.println(((ResultSet) result).getObject("id")+ "," 
-//             + ((ResultSet) result).getString("name") + ", "
-//             + ((ResultSet) result).getString("url") + ".");
-
-//             String name = result.getString("name");
-//             String url = result.getString("url");
-//             pizzaRes = new Pizza(name, url);
-//             pizzaRes.setId(pizza.getId());
-
-//         }
-
-//         } catch (SQLException excep) {
-//             excep.printStackTrace();
-//             System.out.println("Error selecting the pizza.");
-//         }
-//         return result;
-//     }
-
-//      public Pizza get(UUID id) {
-//         ArrayList<Pizza> listaPizzas = new ArrayList<Pizza>();
-//          try (Connection connect = DriverManager.getConnection(DB_URL+"DAOPizzaShop", USER, PASS);
-//             Statement stmn = connect.createStatement();){
-//             PreparedStatement selectPizza = connect
-//             .prepareStatement("SELECT id, name, url FROM pizza WHERE id = ? ;");
-//             selectPizza.setBytes(1, UuidAdapter.getBytesFromUUID(id));
-
-//             ResultSet rs = selectPizza.executeQuery();
-//             System.out.println(rs);
-//             while (rs.next()) {
-//                 listaPizzas.add(new Pizza(rs.getString(2), rs.getString(3)));
-//             }
-//             System.out.println(listaPizzas.get(0).getName());
-//             return listaPizzas;
-//         } catch (SQLException excep) {
-//             excep.printStackTrace();
-//         return listaPizzas;
-//     }
-// }
-
     public Pizza get(UUID id)  {
 
         ArrayList<Pizza> listaPizzas = new ArrayList<Pizza>();
@@ -179,26 +126,6 @@ public class PizzaDao implements DaoW<Pizza>, DaoR<Pizza> {
     }
 
 
-    // public Pizza getAll() {
-    //     ResultSet result=null;
-    //     try (Connection connect = DriverManager.getConnection(DB_URL+"DAOPizzaShop", USER, PASS);
-    //     Statement stmn = connect.createStatement();){
-    //         PreparedStatement stPizza = connect.prepareStatement(getAllPizza);
-    //         result=stPizza.executeQuery();
-        
-    //         while (result.next()) {
-
-    //         System.out.println(((ResultSet) result).getObject("id")+ "," 
-    //         + ((ResultSet) result).getString("name") + ", "
-    //         + ((ResultSet) result).getString("url") + ".");
-    //         }
-
-    //     } catch (SQLException excep){
-    //         excep.printStackTrace();
-    //         System.out.println("Error selecting the pizzas.");
-    //     }
-    //     return result;
-    // }
 
     public Pizza getAll()  {
 

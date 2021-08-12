@@ -6,22 +6,19 @@ public abstract class Entity{
 
     private UUID id;
     
-//    public abstract Entity create();
+
     public void setUUID(UUID id){
-//        UUID uuid = UUID.randomUUID();
+
         this.id = id;//UUID.randomUUID();
     }    
 
-    // public void setUUID(Entity entity){
-    //     UUID uuid = UUID.randomUUID();
-    //     entity.id = uuid;//UUID.randomUUID();
-    // }    
+
 
 
 
 
     public UUID getId(){
-//    public String getId(){
+
         return this.id;//.toString().replace("-", "");
     }
   
